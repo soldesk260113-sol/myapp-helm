@@ -8,7 +8,7 @@ image:
   repository: 10.2.2.40:5000/library/my-web
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "1.0"
+  tag: "4"
 
 imagePullSecrets:
   - name: harbor-secret
