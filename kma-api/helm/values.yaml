@@ -72,15 +72,13 @@ env:
   NODE_ENV: production
 
 livenessProbe:
-  httpGet:
-    path: /
+  tcpSocket:
     port: http
   initialDelaySeconds: 15
   periodSeconds: 20
 
 readinessProbe:
-  httpGet:
-    path: /
+  tcpSocket:
     port: http
   initialDelaySeconds: 5
   periodSeconds: 10

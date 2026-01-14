@@ -5,10 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: 10.2.2.40:5000/library/my-web
+  repository: 10.2.2.40:5000/library/myapp
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "4"
+  tag: "8"
 
 imagePullSecrets:
   - name: harbor-secret
@@ -40,20 +40,19 @@ securityContext: {}
 service:
   type: NodePort
   port: 80
-  targetPort: 80
+  targetPort: 3000
   nodePort: 
 
 ingress:
-  enabled: true
-  className: "nginx"
+  enabled: false
+  className: ""
   annotations: {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
-  hosts:
-    - host: "my-web.antigravity.local"
-      paths:
-        - path: /
-          pathType: Prefix
+  host: "myapp.antigravity.local"
+  paths:
+    - path: /
+      pathType: Prefix
 
 resources: {}
   # limits:
