@@ -91,7 +91,7 @@ app.get('/', (req, res) => {
 });
 
 // Start server
-app.listen(port, () => {
+const server = app.listen(port, () => {
   console.log(`🚀 Antigravity app listening on port ${port}`);
   console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
   console.log(`Version: ${process.env.APP_VERSION || '1.0.0'}`);
