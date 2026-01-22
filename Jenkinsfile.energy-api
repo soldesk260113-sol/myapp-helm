@@ -34,7 +34,7 @@ pipeline {
                         
                         # 3. values.yaml 수정 (입력받은 태그로 변경)
                         # ✅ 경로 확인: Applications/energy-api 폴더
-                        sed -i "s/tag: .*/tag: \\"${params.IMAGE_TAG}\\"/" Applications/energy-api/helm/values.yaml
+                        sed -i "s/tag: .*/tag: \\"${params.IMAGE_TAG}\\"/" energy-api/helm/values.yaml
                         
                         # 4. 변경사항 확인
                         echo "🔍 변경된 태그 확인:"
