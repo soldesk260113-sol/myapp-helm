@@ -39,9 +39,9 @@ pipeline {
                         
                         # 4. 변경사항 확인
                         echo "🔍 변경된 태그 확인:"
-                        grep "tag:" Applications/kma-api/helm/values.yaml
+                        grep "tag:" kma-api/helm/values.yaml
                         
-                        git add Applications/kma-api/helm/values.yaml
+                        git add kma-api/helm/values.yaml
                         
                         # 변경된 내용이 있을 때만 Git에 올림
                         if ! git diff-index --quiet HEAD; then
